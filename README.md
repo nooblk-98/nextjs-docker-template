@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./images/logod.svg" width="360" alt="Next.js-docker logo" />
+  <img src="./images/logo.svg" width="360" alt="Next.js-docker logo" />
 
 # Next.js Docker Template
 
