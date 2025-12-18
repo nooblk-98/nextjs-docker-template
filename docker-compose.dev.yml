@@ -9,6 +9,7 @@ services:
       context: .
       dockerfile: Dockerfile.dev
       args:
+        NODE_VERSION: 20  # Change Node.js version here
         NODE_ENV: development
     image: nextjs-app:dev
     container_name: nextjs-development

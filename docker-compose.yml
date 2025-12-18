@@ -10,6 +10,7 @@ services:
       dockerfile: Dockerfile
       target: runner
       args:
+        NODE_VERSION: 20  # Change Node.js version here
         NODE_ENV: production
     image: nextjs-app:latest
     container_name: nextjs-production

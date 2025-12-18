@@ -3,11 +3,14 @@
 # Optimized for Performance & Security
 # ============================================
 
+# Node.js version
+ARG NODE_VERSION=20
+
 # ============================================
 # Stage 1: Dependencies
 # Install only production dependencies
 # ============================================
-FROM node:20-alpine AS deps
+FROM node:${NODE_VERSION}-alpine AS deps
 
 # Install security updates and required packages
 RUN apk add --no-cache libc6-compat
@@ -25,7 +28,8 @@ RUN npm ci --only=production && \
 # Stage 2: Builder
 # Build the Next.js application
 # ============================================
-FROM node:20-alpine AS builder
+ARG NODE_VERSION=20
+FROM node:${NODE_VERSION}-alpine AS builder
 
 WORKDIR /app
 
@@ -50,7 +54,8 @@ RUN npm run build
 # Stage 3: Runner (Production)
 # Minimal runtime image with security hardening
 # ============================================
-FROM node:20-alpine AS runner
+ARG NODE_VERSION=20
+FROM node:${NODE_VERSION}-alpine AS runner
 
 # Install dumb-init for proper signal handling
 RUN apk add --no-cache dumb-init

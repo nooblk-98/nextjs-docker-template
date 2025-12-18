@@ -3,7 +3,10 @@
 # Optimized for hot reload and debugging
 # ============================================
 
-FROM node:20-alpine
+# Node.js version
+ARG NODE_VERSION=20
+
+FROM node:${NODE_VERSION}-alpine
 
 # Install development dependencies
 RUN apk add --no-cache libc6-compat git
