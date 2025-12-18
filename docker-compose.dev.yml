@@ -1,0 +1,53 @@
+version: '3.9'
+
+services:
+  # ============================================
+  # Next.js Development Server
+  # ============================================
+  nextjs-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+      args:
+        NODE_ENV: development
+    image: nextjs-app:dev
+    container_name: nextjs-development
+    restart: unless-stopped
+    
+    # Port mapping
+    ports:
+      - "3000:3000"
+    
+    # Volume mounts for hot reload
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    
+    # Environment variables
+    environment:
+      - NODE_ENV=development
+      - NEXT_TELEMETRY_DISABLED=1
+      - WATCHPACK_POLLING=true
+      - CHOKIDAR_USEPOLLING=true
+    
+    # Command override for development
+    command: npm run dev
+    
+    # Networks
+    networks:
+      - nextjs-dev-network
+    
+    # Logging
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+# ============================================
+# Networks
+# ============================================
+networks:
+  nextjs-dev-network:
+    driver: bridge
