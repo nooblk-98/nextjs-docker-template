@@ -3,7 +3,7 @@
 
 # Next.js Docker Template
 
-**Production-ready Next.js Docker template for modern web applications**
+**Production-ready Next.js Docker template with multi-stage builds, security hardening, and performance optimizations.**
 
 [![CI/CD](https://github.com/nooblk-98/php-nginx-docker-template/actions/workflows/build-and-push.yml/badge.svg)](https://github.com/nooblk-98/php-nginx-docker-template/actions/workflows/build-and-push.yml)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
@@ -15,9 +15,7 @@
 
 </div>
 
-> **Production-ready Next.js Docker template with multi-stage builds, security hardening, and performance optimizations.**
-
-## ✨ Features
+##  Features
 
 ### Security First
 - ✅ **Non-root user** (UID 1001) - Prevents privilege escalation
