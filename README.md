@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./images/logo.svg" width="360" alt="Next.js-docker logo" />
+  <img src="./images/logo.png" width="360" alt="Next.js-docker logo" />
 
 # Next.js Docker Template
 
@@ -19,7 +19,7 @@
 
 ## ✨ Features
 
-### 🔒 Security First
+### Security First
 - ✅ **Non-root user** (UID 1001) - Prevents privilege escalation
 - ✅ **Read-only filesystem** - Blocks malware installation
 - ✅ **Dropped Linux capabilities** - Minimal permissions
@@ -28,7 +28,7 @@
 - ✅ **Rate limiting** - DDoS protection (10 req/s)
 - ✅ **No new privileges** - Prevents container breakout
 
-### ⚡ Performance Optimized
+### Performance Optimized
 - ✅ **Multi-stage Docker build** - 87% smaller images (~150MB vs 1.2GB)
 - ✅ **Standalone Next.js output** - Minimal runtime dependencies
 - ✅ **Layer caching** - Faster rebuilds (dependencies cached separately)
@@ -37,7 +37,7 @@
 - ✅ **Gzip compression** - Reduced bandwidth usage
 - ✅ **Static asset caching** - 1-year cache for immutable files
 
-### 🛠️ Developer Friendly
+### Developer Friendly
 - ✅ **Hot reload** - Development mode with volume mounts
 - ✅ **TypeScript** - Full type safety
 - ✅ **Tailwind CSS** - Utility-first styling
