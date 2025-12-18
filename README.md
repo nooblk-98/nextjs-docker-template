@@ -1,9 +1,19 @@
-# 🚀 Next.js Docker Template
+<div align="center">
+  <img src="./images/logo.svg" width="360" alt="Next.js-docker logo" />
 
+# Next.js Docker Template
+
+**Production-ready Next.js Docker template for modern web applications**
+
+[![CI/CD](https://github.com/nooblk-98/php-nginx-docker-template/actions/workflows/build-and-push.yml/badge.svg)](https://github.com/nooblk-98/php-nginx-docker-template/actions/workflows/build-and-push.yml)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
-[![Next.js](https://img.shields.io/badge/Next.js-14-000000?logo=next.js&logoColor=white)](https://nextjs.org/)
 [![Security](https://img.shields.io/badge/Security-Hardened-green)](#security-features)
+[![Next.js](https://img.shields.io/badge/Next.js-14-000000?logo=next.js&logoColor=white)](https://nextjs.org/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/nooblk-98/php-nginx-docker-template)](https://github.com/nooblk-98/php-nginx-docker-template/commits/main)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/nooblk-98/php-nginx-docker-template/blob/main/CONTRIBUTING.md)
+
+</div>
 
 > **Production-ready Next.js Docker template with multi-stage builds, security hardening, and performance optimizations.**
 
