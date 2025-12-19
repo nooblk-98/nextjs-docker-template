@@ -18,33 +18,54 @@
 ##  Features
 
 ### Security First
-- ✅ **Non-root user** (UID 1001) - Prevents privilege escalation
-- ✅ **Read-only filesystem** - Blocks malware installation
-- ✅ **Dropped Linux capabilities** - Minimal permissions
-- ✅ **Security headers** - HSTS, CSP, X-Frame-Options, X-XSS-Protection
-- ✅ **SSL/TLS ready** - Nginx reverse proxy with HTTPS
-- ✅ **Rate limiting** - DDoS protection (10 req/s)
-- ✅ **No new privileges** - Prevents container breakout
+- **Non-root user** (UID 1001) - Prevents privilege escalation
+- **Read-only filesystem** - Blocks malware installation
+- **Dropped Linux capabilities** - Minimal permissions
+- **Security headers** - HSTS, CSP, X-Frame-Options, X-XSS-Protection
+- **SSL/TLS ready** - Nginx reverse proxy with HTTPS
+- **Rate limiting** - DDoS protection (10 req/s)
+- **No new privileges** - Prevents container breakout
 
 ### Performance Optimized
-- ✅ **Multi-stage Docker build** - 87% smaller images (~150MB vs 1.2GB)
-- ✅ **Standalone Next.js output** - Minimal runtime dependencies
-- ✅ **Layer caching** - Faster rebuilds (dependencies cached separately)
-- ✅ **Alpine Linux** - Lightweight base (~5MB vs ~200MB)
-- ✅ **SWC minification** - Faster builds than Babel
-- ✅ **Gzip compression** - Reduced bandwidth usage
-- ✅ **Static asset caching** - 1-year cache for immutable files
+- **Multi-stage Docker build** - 87% smaller images (~150MB vs 1.2GB)
+- **Standalone Next.js output** - Minimal runtime dependencies
+- **Layer caching** - Faster rebuilds (dependencies cached separately)
+- **Alpine Linux** - Lightweight base (~5MB vs ~200MB)
+- **SWC minification** - Faster builds than Babel
+- **Gzip compression** - Reduced bandwidth usage
+- **Static asset caching** - 1-year cache for immutable files
 
 ### Developer Friendly
-- ✅ **Hot reload** - Development mode with volume mounts
-- ✅ **TypeScript** - Full type safety
-- ✅ **Tailwind CSS** - Utility-first styling
-- ✅ **ESLint** - Code quality
-- ✅ **Health check endpoint** - `/api/health`
-- ✅ **Makefile commands** - Convenient shortcuts
-- ✅ **CI/CD ready** - GitHub Actions workflow included
+- **Hot reload** - Development mode with volume mounts
+- **TypeScript** - Full type safety
+- **Tailwind CSS** - Utility-first styling
+- **ESLint** - Code quality
+- **Health check endpoint** - `/api/health`
+- *Makefile commands** - Convenient shortcuts
+- **CI/CD ready** - GitHub Actions workflow included
 
 ## 🚀 Quick Start
+
+### Use with your own code 
+
+```bash
+# Download Dockerfile (prod)
+wget https://raw.githubusercontent.com/nooblk-98/nextjs-docker-template/refs/heads/main/Dockerfile
+```
+```bash
+# Download Docker Compose  (prod)
+wget https://raw.githubusercontent.com/nooblk-98/nextjs-docker-template/refs/heads/main/docker-compose.yml
+```
+
+### Use with your own code 
+
+```bash
+# Download Dockerfile (dev)
+wget https://raw.githubusercontent.com/nooblk-98/nextjs-docker-template/refs/heads/main/Dockerfile.dev
+```bash
+# Download Docker Compose  (dev)
+wget https://raw.githubusercontent.com/nooblk-98/nextjs-docker-template/refs/heads/main/docker-compose.dev.yml
+```
 
 
 ### Docker Development (Hot Reload)
