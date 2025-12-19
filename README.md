@@ -27,11 +27,11 @@
 - **No new privileges** - Prevents container breakout
 
 ### Performance Optimized
-- **Multi-stage Docker build** - 87% smaller images (~150MB vs 1.2GB)
+- **Multi-stage Docker build** - smaller images
 - **Standalone Next.js output** - Minimal runtime dependencies
-- **Layer caching** - Faster rebuilds (dependencies cached separately)
-- **Alpine Linux** - Lightweight base (~5MB vs ~200MB)
-- **SWC minification** - Faster builds than Babel
+- **Layer caching** - Faster rebuilds 
+- **Alpine Linux** - Lightweight base 
+- **SWC minification** - Faster builds 
 - **Gzip compression** - Reduced bandwidth usage
 - **Static asset caching** - 1-year cache for immutable files
 
@@ -40,8 +40,6 @@
 - **TypeScript** - Full type safety
 - **Tailwind CSS** - Utility-first styling
 - **ESLint** - Code quality
-- **Health check endpoint** - `/api/health`
-- *Makefile commands** - Convenient shortcuts
 - **CI/CD ready** - GitHub Actions workflow included
 
 ## 🚀 Quick Start
