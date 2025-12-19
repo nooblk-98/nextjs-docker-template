@@ -1,3 +1,0 @@
-# Trivy ignore file
-# CVEs listed here are addressed via npm overrides in package.json
-# No additional ignores needed - all vulnerabilities are patched at source
