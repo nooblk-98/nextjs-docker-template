@@ -71,7 +71,7 @@ wget https://raw.githubusercontent.com/nooblk-98/nextjs-docker-template/refs/hea
 
 ### workflow 
 ```bash
-https://raw.githubusercontent.com/nooblk-98/nextjs-docker-template/refs/heads/main/.github/workflows/docker-build.yml
+wget https://raw.githubusercontent.com/nooblk-98/nextjs-docker-template/refs/heads/main/.github/workflows/docker-build.yml
 ```
 
 ### Build & Push Workflow
