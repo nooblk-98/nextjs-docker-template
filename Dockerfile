@@ -4,7 +4,7 @@
 # ============================================
 
 # Node.js version
-ARG NODE_VERSION=20
+ARG NODE_VERSION=21
 
 # ============================================
 # Stage 1: Dependencies
