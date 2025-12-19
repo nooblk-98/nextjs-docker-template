@@ -62,6 +62,7 @@ wget https://raw.githubusercontent.com/nooblk-98/nextjs-docker-template/refs/hea
 ```bash
 # Download Dockerfile (dev)
 wget https://raw.githubusercontent.com/nooblk-98/nextjs-docker-template/refs/heads/main/Dockerfile.dev
+```
 ```bash
 # Download Docker Compose  (dev)
 wget https://raw.githubusercontent.com/nooblk-98/nextjs-docker-template/refs/heads/main/docker-compose.dev.yml
