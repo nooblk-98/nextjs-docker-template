@@ -86,10 +86,12 @@ docker-compose up -d
 ```bash
 # Build production image
 docker build -t nextjs-app:latest .
-
+```
+```bash
 # Run production container
 docker run -p 3000:3000 nextjs-app:latest
-
+```
+```bash
 # Using Docker Compose
 docker-compose up -d                  # Start in background
 docker-compose down                   # Stop and remove
@@ -103,10 +105,12 @@ docker-compose restart                # Restart services
 ```bash
 # Build development image
 docker build -f Dockerfile.dev -t nextjs-app:dev .
-
+```
+```bash
 # Run development container with hot reload
 docker-compose -f docker-compose.dev.yml up
-
+```
+```bash
 # Stop development containers
 docker-compose -f docker-compose.dev.yml down
 ```
