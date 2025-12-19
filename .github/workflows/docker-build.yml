@@ -9,6 +9,9 @@ on:
     # Run security scan weekly
     - cron: '0 0 * * 0'
 
+permissions:
+  contents: write
+
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}

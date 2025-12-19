@@ -69,6 +69,21 @@ wget https://raw.githubusercontent.com/nooblk-98/nextjs-docker-template/refs/hea
 wget https://raw.githubusercontent.com/nooblk-98/nextjs-docker-template/refs/heads/main/docker-compose.yml
 ```
 
+### workflow 
+```bash
+https://raw.githubusercontent.com/nooblk-98/nextjs-docker-template/refs/heads/main/.github/workflows/docker-build.yml
+```
+
+### Build & Push Workflow
+
+The template includes a GitHub Actions workflow for automated building and pushing to Docker Hub:
+
+<div align="center">
+  <img src="./images/build.png" alt="Build Workflow" />
+</div>
+
+
+
 ### Use with your own code 
 
 ```bash
