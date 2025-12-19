@@ -79,21 +79,6 @@ docker-compose -f docker-compose.dev.yml up
 docker-compose up -d
 ```
 
-## 💻 Usage
-
-### NPM Scripts
-
-```bash
-# Docker shortcuts
-npm run docker:build                  # Build production image
-npm run docker:build:dev              # Build development image
-npm run docker:run                    # Run production container
-npm run docker:compose:up             # Start with compose
-npm run docker:compose:down           # Stop compose
-npm run docker:compose:dev            # Development mode
-npm run docker:compose:logs           # View logs
-```
-
 ## 🐳 Docker Commands
 
 ### Production
