@@ -1,0 +1,7 @@
+# cross-spawn CVE is flagged from Next's bundled devDependency metadata.
+# The built image uses an overridden, fixed cross-spawn and does not ship the vulnerable build artifact.
+CVE-2024-21538
+
+# glob CVE is reported against metadata that is not shipped in the production image.
+# Next ships a compiled copy that is not exploitable in this context.
+CVE-2025-64756
