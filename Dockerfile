@@ -1,6 +1,6 @@
 # ============================================
 # Multi-Stage Next.js Dockerfile
-# Optimized for Performance & Security
+# Optimized for Minimal Size & Security
 # ============================================
 
 # Node.js version
@@ -8,28 +8,30 @@ ARG NODE_VERSION=20
 
 # ============================================
 # Stage 1: Dependencies
-# Install only production dependencies
+# Install dependencies needed for production
 # ============================================
 FROM node:${NODE_VERSION}-alpine AS deps
 
-# Install security updates and required packages
-RUN apk add --no-cache libc6-compat
+# Install security updates and required packages (including git for Next.js build)
+RUN apk add --no-cache libc6-compat git
 
 WORKDIR /app
 
 # Copy package files
 COPY package.json package-lock.json* ./
 
-# Install dependencies with clean install for reproducible builds
-RUN npm ci --only=production && \
+# Install all dependencies (use npm install for better CI/CD compatibility)
+RUN npm install && \
     npm cache clean --force
 
 # ============================================
 # Stage 2: Builder
 # Build the Next.js application
 # ============================================
-ARG NODE_VERSION=20
 FROM node:${NODE_VERSION}-alpine AS builder
+
+# Install git for build metadata
+RUN apk add --no-cache libc6-compat git
 
 WORKDIR /app
 
@@ -43,21 +45,13 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 
-# Install all dependencies (including devDependencies) for build
-RUN npm ci && \
-    npm cache clean --force
-
-# Ensure public directory exists
-RUN mkdir -p public
-
-# Build the Next.js application with standalone output
+# Build the Next.js application (standalone output)
 RUN npm run build
 
 # ============================================
 # Stage 3: Runner (Production)
 # Minimal runtime image with security hardening
 # ============================================
-ARG NODE_VERSION=20
 FROM node:${NODE_VERSION}-alpine AS runner
 
 # Install dumb-init for proper signal handling
@@ -75,11 +69,10 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-# Copy only necessary files from builder
-# Public folder (Next.js creates this during build)
-COPY --from=builder --chown=nextjs:nodejs /app/public ./public
+# Copy the standalone output
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 
 # Switch to non-root user
 USER nextjs
@@ -90,5 +83,5 @@ EXPOSE 3000
 # Use dumb-init to handle signals properly
 ENTRYPOINT ["dumb-init", "--"]
 
-# Start the application
+# Start the standalone server (much smaller than full node_modules)
 CMD ["node", "server.js"]
