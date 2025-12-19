@@ -4,13 +4,13 @@
 # ============================================
 
 # Node.js version
-ARG NODE_VERSION=21
+ARG NODE_VERSION=20.19.6
 
 # ============================================
 # Stage 1: Dependencies
 # Install dependencies needed for production
 # ============================================
-FROM node:${NODE_VERSION}-alpine AS deps
+FROM node:${NODE_VERSION}-alpine3.23 AS deps
 
 # Install security updates and required packages (including git for Next.js build)
 RUN apk add --no-cache libc6-compat git
