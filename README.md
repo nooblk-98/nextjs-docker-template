@@ -42,6 +42,20 @@
 - **ESLint** - Code quality
 - **CI/CD ready** - GitHub Actions workflow included
 
+
+## What you need ? 
+
+### Standalone Next.js Build
+
+The template uses Next.js **standalone output mode** which is **already activated** in [next.config.js](next.config.js):
+
+```javascript
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Enable standalone output for Docker optimization
+  output: 'standalone', 
+```
+
 ## 🚀 Quick Start
 
 ### Use with your own code 
