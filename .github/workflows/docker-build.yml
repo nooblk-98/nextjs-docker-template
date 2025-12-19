@@ -90,7 +90,7 @@ jobs:
         run: docker build -t nextjs-app:scan .
 
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@master
+        uses: aquasecurity/trivy-action@0.33.1
         with:
           image-ref: 'nextjs-app:scan'
           format: 'table'
@@ -98,7 +98,7 @@ jobs:
           exit-code: '0'
 
       - name: Run Trivy JSON output for artifact
-        uses: aquasecurity/trivy-action@master
+        uses: aquasecurity/trivy-action@0.33.1
         with:
           image-ref: 'nextjs-app:scan'
           format: 'json'
