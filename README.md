@@ -43,7 +43,7 @@
 - **CI/CD ready** - GitHub Actions workflow included
 
 
-## What you need ? 
+## pre Requirements !?
 
 ### Standalone Next.js Build
 
@@ -56,7 +56,7 @@ const nextConfig = {
   output: 'standalone', 
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Use with your own code 
 
@@ -279,34 +279,6 @@ Nginx provides:
 
 ## 🌐 Deployment
 
-### Docker Swarm
-
-```bash
-# Initialize swarm
-docker swarm init
-
-# Deploy stack
-docker stack deploy -c docker-compose.yml nextjs-stack
-
-# Check services
-docker service ls
-
-# Scale service
-docker service scale nextjs-stack_nextjs=3
-
-# Remove stack
-docker stack rm nextjs-stack
-```
-
-### Multi-Stage Docker Build
-
-```
-Stage 1: Dependencies
-  ↓ (Copy node_modules)
-Stage 2: Builder
-  ↓ (Copy .next/standalone)
-Stage 3: Runner (Final Image ~150MB)
-```
 
 ### Request Flow
 
@@ -358,16 +330,6 @@ docker builder prune -a
 
 # Rebuild without cache
 docker build --no-cache -t nextjs-app:latest .
-```
-
-### Health Check Fails
-
-```bash
-# Test health endpoint
-curl http://localhost:3000/api/health
-
-# Check from inside container
-docker exec nextjs-production curl http://localhost:3000/api/health
 ```
 
 ### Hot Reload Not Working
