@@ -82,7 +82,8 @@ The template includes a GitHub Actions workflow for automated building and pushi
   <img src="./images/build.png" alt="Build Workflow" />
 </div>
 
-### helth check api 
+### health check API
+
 ```bash
 # place this under /src/app/api/health/route.ts
 
